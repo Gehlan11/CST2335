@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">CST2335</string>
+
+    <string name="geo_data_app">Geo Data Source</string>
+    <string name="geo_menu_item_search">Search Nearby Cities</string>
+    <string name="geo_menu_item_saved">Saved Cities</string>
+    <string name="geo_menu_item_help">Help</string>
+    <string name="geo_drawer_open">Open drawer</string>
+    <string name="geo_drawer_close">Close drawer</string>
+    <string name="geo_hint_lat">Enter latitude</string>
+    <string name="geo_hint_long">Enter longitude</string>
+    <string name="geo_search_button">Search near by cities</string>
+    <string name="geo_city_name">City name</string>
+    <string name="geo_city_region">region</string>
+    <string name="geo_city_distance_label">Distance: </string>
+    <string name="geo_city_distance">0</string>
+    <string name="geo_city_country_name">Country:</string>
+    <string name="geo_city_region_name">Region:</string>
+    <string name="geo_city_currency_code">Currency code:</string>
+    <string name="geo_city_currency_name">Currency name:</string>
+    <string name="geo_city_currency_sym">Currency symbol:</string>
+    <string name="geo_city_lat">Latitude:</string>
+    <string name="geo_city_lon">Longitude:</string>
+    <string name="geo_open_map_text">Open in google maps</string>
+    <string name="geo_city_save">Add to favourite cities</string>
+    <string name="geo_city_delete">Remove from favourite cities</string>
+</resources>

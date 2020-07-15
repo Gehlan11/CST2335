@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/city_lat_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/geo_hint_lat"
+            android:inputType="numberDecimal"/>
+
+        <EditText
+            android:id="@+id/city_long_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/geo_hint_long"
+            android:inputType="numberDecimal"/>
+
+        <Button
+            android:id="@+id/city_search_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/geo_search_button"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/cities_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
