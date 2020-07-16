@@ -14,4 +14,10 @@
         android:layout_height="wrap_content"
         android:text="@string/geo_data_app"/>
 
+    <Button
+        android:id="@+id/buttonSoccer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/soccer_app"/>
+
 </LinearLayout>

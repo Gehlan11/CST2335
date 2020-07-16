@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.cst2335.geo_data_source.GeoMainActivity;
+import com.example.cst2335.soccer.SoccerMatchActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +23,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, GeoMainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button soccerButton = findViewById(R.id.buttonSoccer);
+        soccerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SoccerMatchActivity.class);
                 startActivity(intent);
             }
         });
