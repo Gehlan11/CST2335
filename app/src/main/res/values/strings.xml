@@ -24,4 +24,7 @@
     <string name="geo_open_map_text">Open in google maps</string>
     <string name="geo_city_save">Add to favourite cities</string>
     <string name="geo_city_delete">Remove from favourite cities</string>
+
+    <!--  Soccer strings  -->
+    <string name="soccer_app">Soccer match highlights</string>
 </resources>
