@@ -20,4 +20,10 @@
         android:layout_height="wrap_content"
         android:text="@string/soccer_app"/>
 
+    <Button
+        android:id="@+id/buttonLyricsSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lyrics_search_app"/>
+
 </LinearLayout>
