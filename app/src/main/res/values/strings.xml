@@ -27,4 +27,10 @@
 
     <!--  Soccer strings  -->
     <string name="soccer_app">Soccer match highlights</string>
+
+    <!--  Lyrics String  -->
+    <string name="lyrics_search_app">Song Lyrics Search</string>
+    <string name="enter_artist_name">Enter artist or band name</string>
+    <string name="enter_song_title">Enter song title</string>
+    <string name="search_for_lyrics">Search Lyrics</string>
 </resources>
