@@ -26,16 +26,30 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 public class SearchLyricsFragment extends Fragment implements View.OnClickListener {
 
+    /**
+     * EditText for artist or band name
+     */
     EditText artistName;
+    /**
+     * EditText for artist or band name
+     */
     EditText songTitle;
+    /**
+     * Button for calling api
+     */
     Button search;
+    /**
+     * ProgressBar for showing while API is being called
+     */
     ProgressBar progressBar;
 
+    /**
+     * For storing successful searched data
+     */
     SharedPreferences sharedPreferences;
 
     @Nullable
@@ -51,11 +65,15 @@ public class SearchLyricsFragment extends Fragment implements View.OnClickListen
 
         search = view.findViewById(R.id.search);
         search.setOnClickListener(this);
+        //get last searched data if exists
         getLastSearchedData();
 
         return view;
     }
 
+    /**
+     * Read the shared preference for getting last successful searched data
+     */
     private void getLastSearchedData() {
         String strArtistName = sharedPreferences.getString("artistName", "");
         String strSongTitle = sharedPreferences.getString("songTitle", "");
@@ -63,6 +81,9 @@ public class SearchLyricsFragment extends Fragment implements View.OnClickListen
         artistName.setText(strArtistName);
     }
 
+    /**
+     * Save the last successful searched data to the sharedpreference for later viewing
+     */
     private void saveSearchedData(String artistName, String songTitle) {
         sharedPreferences.edit()
                 .putString("artistName", artistName)
@@ -77,20 +98,27 @@ public class SearchLyricsFragment extends Fragment implements View.OnClickListen
             String song = songTitle.getText().toString();
 
             if (artist.trim().isEmpty()) {
-                Toast.makeText(getActivity(), "Enter artist or band name!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), getResources().getString(R.string.lyrics_error_enter_artist_name), Toast.LENGTH_SHORT).show();
             } else if (song.trim().isEmpty()) {
-                Toast.makeText(getActivity(), "Enter song title!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), getResources().getString(R.string.lyrics_error_enter_song_title), Toast.LENGTH_SHORT).show();
             } else {
                 new SearchLyrics(artist, song).execute();
             }
         }
     }
 
+    /**
+     * AsyncTask to perform API call
+     */
     class SearchLyrics extends AsyncTask<Void, Void, String> {
 
         String artist;
         String song;
 
+        /**
+         * @param artist Name of the artist or band
+         * @param song   name of the song
+         */
         SearchLyrics(String artist, String song) {
             this.artist = artist;
             this.song = song;
@@ -99,10 +127,12 @@ public class SearchLyricsFragment extends Fragment implements View.OnClickListen
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
+            //hide progressbar
             progressBar.setVisibility(View.INVISIBLE);
+            //parse the json data
             try {
                 JSONObject jsonObject = new JSONObject(s);
-                if(jsonObject.has("lyrics")){
+                if (jsonObject.has("lyrics")) {
                     String lyrics = jsonObject.getString("lyrics");
                     saveSearchedData(artist, song);
                     Intent intent = new Intent(getActivity(), ShowLyricsActivity.class);
@@ -110,17 +140,18 @@ public class SearchLyricsFragment extends Fragment implements View.OnClickListen
                     intent.putExtra("song", song);
                     intent.putExtra("lyrics", lyrics);
                     startActivity(intent);
-                }else{
-                    Toast.makeText(getActivity(), "Lyrics not found!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getActivity(), getResources().getString(R.string.lyrics_error_not_found), Toast.LENGTH_SHORT).show();
                 }
             } catch (JSONException e) {
-                Toast.makeText(getActivity(), "Lyrics not found!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), getResources().getString(R.string.lyrics_error_not_found), Toast.LENGTH_SHORT).show();
             }
         }
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            //show progressbar
             progressBar.setVisibility(View.VISIBLE);
         }
 
@@ -128,10 +159,15 @@ public class SearchLyricsFragment extends Fragment implements View.OnClickListen
         protected String doInBackground(Void... voids) {
             String httpResponse = "";
             try {
-                String apiUrl = "https://api.lyrics.ovh/v1/" + artist + "/" + song;
+                //replace spaces with %20 for URL safe arguments
+                String encodedArtist = artist.replaceAll(" ", "%20");
+                String encodedSong = song.replaceAll(" ", "%20");
+                String apiUrl = "https://api.lyrics.ovh/v1/" + encodedArtist + "/" + encodedSong;
+                //using HttpUrlConnection to call API
                 URL url = new URL(apiUrl);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 String responseLine;
+                //reading the response
                 StringBuilder stringBuilder = new StringBuilder();
                 BufferedReader br = new BufferedReader(
                         new InputStreamReader(httpURLConnection.getInputStream()));
@@ -139,7 +175,8 @@ public class SearchLyricsFragment extends Fragment implements View.OnClickListen
                     stringBuilder.append(responseLine);
                 }
                 httpResponse = stringBuilder.toString();
-            } catch (IOException e) { }
+            } catch (IOException e) {
+            }
             return httpResponse;
         }
     }

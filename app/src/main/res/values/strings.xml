@@ -33,4 +33,29 @@
     <string name="enter_artist_name">Enter artist or band name</string>
     <string name="enter_song_title">Enter song title</string>
     <string name="search_for_lyrics">Search Lyrics</string>
+    <string name="artist_name">Artist/Band:</string>
+    <string name="song_title">Song title:</string>
+    <string name="song_lyrics">Lyrics:</string>
+    <string name="google_search">Search on google</string>
+    <string name="add_to_favourite">Add to Favourites</string>
+    <string name="remove_from_favourite">Remove from Favourites</string>
+    <string name="search">Search</string>
+    <string name="favourite">Favourites</string>
+    <string name="lyrics_author">Author: Abdurrahman Moussa</string>
+    <string name="lyrics_version">Version number: 1</string>
+    <string name="lyrics_help">Help</string>
+    <string name="lyrics_help_main">- Search screen: Enter artist or band name and song title to get the lyrics.\n
+    - Favourite list screen: Select the list item to read the lyrics from favourites.</string>
+    <string name="lyrics_help_show">- Press \'Add to Favourites\' button to save for later viewing.
+    - Press \'Search on google\' button to view more details about the song on Google.</string>
+    <string name="lyrics_dialog_ok">OK</string>
+    <string name="lyrics_added_favourite">Added to favourites!</string>
+    <string name="lyrics_removed_favourite">Removed from favourites!</string>
+    <string name="lyrics_error_enter_artist_name">Enter artist or band name!</string>
+    <string name="lyrics_error_enter_song_title">Enter song title!</string>
+    <string name="lyrics_error_not_found">Lyrics not found!</string>
+    <string name="dialog_remove_fav_lyrics">Remove from favourites</string>
+    <string name="dialog_lyrics_sure">Are you sure you want to delete?</string>
+    <string name="dialog_lyrics_sure_yes">Yes</string>
+    <string name="dialog_lyrics_sure_no">No</string>
 </resources>

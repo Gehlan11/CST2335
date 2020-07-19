@@ -2,16 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="16dp">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lyrics_search_app"
-        android:textSize="16sp"
-        android:textStyle="bold|italic" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,7 +12,6 @@
         android:layout_marginTop="8dp"
         android:background="@color/colorGray"
         android:padding="5dp">
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,14 +23,16 @@
                 android:id="@+id/artist_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/enter_artist_name" />
+                android:inputType="text"
+                android:hint="@string/enter_artist_name" />
 
             <EditText
                 android:id="@+id/song_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/enter_song_title" />
+                android:inputType="text"
+                android:hint="@string/enter_song_title" />
 
             <Button
                 android:id="@+id/search"
