@@ -30,6 +30,13 @@
         <activity
             android:name=".soccer.MatchDetails"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".lyrics_ovh.LyricsMainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".lyrics_ovh.ShowLyricsActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".lyrics_ovh.LyricsMainActivity"/>
     </application>
 
 </manifest>
