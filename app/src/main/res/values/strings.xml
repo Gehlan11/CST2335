@@ -58,4 +58,7 @@
     <string name="dialog_lyrics_sure">Are you sure you want to delete?</string>
     <string name="dialog_lyrics_sure_yes">Yes</string>
     <string name="dialog_lyrics_sure_no">No</string>
+
+    <!--  Deezer song search  -->
+    <string name="deezer_name">Deezer Song Search</string>
 </resources>

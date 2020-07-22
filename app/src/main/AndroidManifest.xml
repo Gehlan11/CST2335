@@ -35,8 +35,16 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".lyrics_ovh.ShowLyricsActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".lyrics_ovh.LyricsMainActivity"/>
+            android:parentActivityName=".lyrics_ovh.LyricsMainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".deezer.DeezerMainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".deezer.TrackListActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".deezer.DeezerSongDetailsActivity"/>
     </application>
 
 </manifest>
