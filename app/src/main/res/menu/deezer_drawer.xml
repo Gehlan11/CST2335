@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/search"
+        android:title="Search" />
+    <item
+        android:id="@+id/favourites"
+        android:title="Favourites" />
+
+    <group android:id="@+id/otherApps"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/geoApp"
+            android:title="@string/geo_data_app" />
+
+        <item
+            android:id="@+id/soccerApp"
+            android:title="@string/soccer_app" />
+
+        <item
+            android:id="@+id/lyricsApp"
+            android:title="@string/lyrics_search_app" />
+    </group>
+</menu>

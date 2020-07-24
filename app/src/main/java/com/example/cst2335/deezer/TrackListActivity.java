@@ -3,14 +3,23 @@ package com.example.cst2335.deezer;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 
 import com.example.cst2335.R;
+import com.example.cst2335.geo_data_source.GeoMainActivity;
+import com.example.cst2335.lyrics_ovh.LyricsMainActivity;
+import com.example.cst2335.soccer.SoccerMatchActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,6 +36,7 @@ import java.util.ArrayList;
 
 public class TrackListActivity extends AppCompatActivity {
 
+    ProgressBar progressBar;
     ListView trackListView;
     String trackListUrl = "";
     ArrayList<Song> songs;
@@ -47,6 +57,7 @@ public class TrackListActivity extends AppCompatActivity {
 
     private void initViews() {
         trackListView = findViewById(R.id.trackListView);
+        progressBar = findViewById(R.id.progressBar);
         songs = new ArrayList<>();
         trackListAdapter = new TrackListAdapter(this, songs);
         trackListView.setAdapter(trackListAdapter);
@@ -59,6 +70,34 @@ public class TrackListActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        hideProgressBar();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.deezer_toolbar, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.geoApp){
+            startActivity(new Intent(TrackListActivity.this, GeoMainActivity.class));
+        }else if(item.getItemId() == R.id.soccerApp){
+            startActivity(new Intent(TrackListActivity.this, SoccerMatchActivity.class));
+        }else if(item.getItemId() == R.id.lyricsApp){
+            startActivity(new Intent(TrackListActivity.this, LyricsMainActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void showProgressBar(){
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    private void hideProgressBar(){
+        progressBar.setVisibility(View.GONE);
     }
 
     class GetTrackList extends AsyncTask<Void, Void, String> {
@@ -72,6 +111,7 @@ public class TrackListActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            showProgressBar();
         }
 
         @Override
@@ -94,10 +134,12 @@ public class TrackListActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
+            hideProgressBar();
             try {
                 JSONObject jsonObject = new JSONObject(s);
                 JSONArray jsonArray = jsonObject.getJSONArray("data");
-                for (int i = 0; i < jsonArray.length(); i++) {
+                int count = jsonArray.length();
+                for (int i = 0; i < count; i++) {
                     JSONObject data = jsonArray.getJSONObject(i);
                     int id = data.getInt("id");
                     String title = data.getString("title");
@@ -112,6 +154,9 @@ public class TrackListActivity extends AppCompatActivity {
                     song.setAlbumTitle(albumTitle);
                     song.setCover_big(cover_big);
                     songs.add(song);
+                }
+                if(count == 0){
+                    Toast.makeText(TrackListActivity.this, "No songs found", Toast.LENGTH_SHORT).show();
                 }
                 trackListAdapter.notifyDataSetChanged();
             } catch (JSONException e) {

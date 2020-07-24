@@ -36,32 +36,34 @@ public class SearchSongFragment extends Fragment {
     ProgressBar progressBar;
     ArrayList<Artist> artistArrayList;
     DeezerArtistListAdapter deezerArtistListAdapter;
+    View view;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.search_song_fragment, container, false);
-
-        initViews(view);
-        hideProgressBar();
-        searchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String artistName = searchInput.getText().toString();
-                new SearchSong(artistName).execute();
-            }
-        });
+        if (view == null) {
+            view = inflater.inflate(R.layout.search_song_fragment, container, false);
+            initViews(view);
+            hideProgressBar();
+            searchButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String artistName = searchInput.getText().toString();
+                    new SearchSong(artistName).execute();
+                }
+            });
+        }
         return view;
     }
 
-    private void initViews(View view){
+    private void initViews(View view) {
         searchInput = view.findViewById(R.id.searchInput);
         progressBar = view.findViewById(R.id.progressBar);
         searchButton = view.findViewById(R.id.searchButton);
         setupListView(view);
     }
 
-    private void setupListView(View view){
+    private void setupListView(View view) {
         ListView searchResultsList = view.findViewById(R.id.searchResultsList);
         artistArrayList = new ArrayList<>();
         deezerArtistListAdapter = new DeezerArtistListAdapter(getActivity(), artistArrayList);
@@ -71,18 +73,18 @@ public class SearchSongFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(), TrackListActivity.class);
-                Artist artist = (Artist)parent.getItemAtPosition(position);
+                Artist artist = (Artist) parent.getItemAtPosition(position);
                 intent.putExtra("tracklist_url", artist.getTracklist());
                 startActivity(intent);
             }
         });
     }
 
-    private void showProgressBar(){
+    private void showProgressBar() {
         progressBar.setVisibility(View.VISIBLE);
     }
 
-    private void hideProgressBar(){
+    private void hideProgressBar() {
         progressBar.setVisibility(View.GONE);
     }
 
@@ -119,27 +121,27 @@ public class SearchSongFragment extends Fragment {
                     boolean insideArtist = false;
                     artistArrayList.clear();
                     Artist artist = null;
-                    while (currentElement != XmlPullParser.END_DOCUMENT){
+                    while (currentElement != XmlPullParser.END_DOCUMENT) {
                         String tag = pullParser.getName();
-                        switch (currentElement){
+                        switch (currentElement) {
                             case XmlPullParser.START_TAG:
-                                if(tag.equals("artist")){
+                                if (tag.equals("artist")) {
                                     artist = new Artist();
                                     insideArtist = true;
-                                }else if(tag.equals("name")){
-                                    if(insideArtist){
+                                } else if (tag.equals("name")) {
+                                    if (insideArtist) {
                                         String artistName = pullParser.nextText();
                                         artist.setName(artistName);
                                     }
-                                }else if(tag.equals("tracklist")){
-                                    if(insideArtist){
+                                } else if (tag.equals("tracklist")) {
+                                    if (insideArtist) {
                                         String tracklist = pullParser.nextText();
                                         artist.setTracklist(tracklist);
                                     }
                                 }
                                 break;
                             case XmlPullParser.END_TAG:
-                                if(tag.equals("artist")){
+                                if (tag.equals("artist")) {
                                     artistArrayList.add(artist);
                                     insideArtist = false;
                                 }

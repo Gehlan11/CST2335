@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+        <item
+            android:id="@+id/geoApp"
+            android:icon="@drawable/ic_location_city"
+            app:showAsAction="ifRoom"
+            android:title="@string/geo_data_app" />
+
+        <item
+            android:id="@+id/soccerApp"
+            android:icon="@drawable/soccer_icon"
+            app:showAsAction="ifRoom"
+            android:title="@string/soccer_app" />
+
+        <item
+            android:id="@+id/lyricsApp"
+            android:title="@string/lyrics_search_app" />
+</menu>
