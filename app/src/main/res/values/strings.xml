@@ -58,4 +58,33 @@
     <string name="dialog_lyrics_sure">Are you sure you want to delete?</string>
     <string name="dialog_lyrics_sure_yes">Yes</string>
     <string name="dialog_lyrics_sure_no">No</string>
+
+    <!--  Deezer song search  -->
+    <string name="deezer_name">Deezer Song Search</string>
+    <string name="deezer_toolbar_help">Help</string>
+    <string name="deezer_hint_artist">Enter artist name</string>
+    <string name="deezer_search_button">Search</string>
+    <string name="deezer_favourites">Favourites</string>
+    <string name="deezer_author_title">Author:</string>
+    <string name="deezer_author_name">BhavinKumar Patel</string>
+    <string name="deezer_version_title">Version:</string>
+    <string name="deezer_version_code">1.1</string>
+    <string name="deezer_activity_title">Activity title:</string>
+    <string name="deezer_activity_name">Deezer Song Search api</string>
+    <string name="deezer_help_diaog_ok">OK</string>
+    <string name="deezer_added_to_favourites">Song details saved to favourites.</string>
+    <string name="deezer_deleted_favourites">Song details deleted from favourites.</string>
+    <string name="deezer_artist_title">Title:</string>
+    <string name="deezer_song_duration">Duration:</string>
+    <string name="deezer_album_name">Album name:</string>
+    <string name="deezer_add_to_favourites">Add to favourites</string>
+    <string name="deezer_delete_favourite">Remove from favourites</string>
+    <string name="deezer_tracklist">Tracklist</string>
+    <string name="deezer_song_details">Song details</string>
+    <string name="deezer_help_1">- Enter artist name on search screen to get results.\n
+    - Click on result item to get tracklist.
+    - To view favourites, open drawer and select \'Favourites\'.</string>
+    <string name="deezer_help_2">- Select a song from a list to view detailed information.</string>
+    <string name="deezer_help_3">- To save the song details offline, click on \'Add to favourites\'.\n
+    - To delete song details saved locally, click on \'Remove from favourites\'</string>
 </resources>
