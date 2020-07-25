@@ -32,4 +32,33 @@
     <string name="dialog_lyrics_sure">क्या आप वाकई इसे हटाना चाहते हैं?</string>
     <string name="dialog_lyrics_sure_yes">हाँ</string>
     <string name="dialog_lyrics_sure_no">नहीं</string>
+
+    <!--  Deezer song search  -->
+    <string name="deezer_name">Deezer Song Search</string>
+    <string name="deezer_toolbar_help">मदद</string>
+    <string name="deezer_hint_artist">कलाकार का नाम दर्ज करें</string>
+    <string name="deezer_search_button">खोजें</string>
+    <string name="deezer_favourites">पसंदीदा</string>
+    <string name="deezer_author_title">लेखक:</string>
+    <string name="deezer_author_name">भाविनकुमार पटेल</string>
+    <string name="deezer_version_title">संस्करण:</string>
+    <string name="deezer_version_code">1.1</string>
+    <string name="deezer_activity_title">गतिविधि शीर्षक:</string>
+    <string name="deezer_activity_name">Deezer Song Search api</string>
+    <string name="deezer_help_diaog_ok">ठीक है</string>
+    <string name="deezer_added_to_favourites">गीत का विवरण पसंदीदा में सहेजा गया।</string>
+    <string name="deezer_deleted_favourites">गाने का विवरण पसंदीदा से हटा दिया गया।</string>
+    <string name="deezer_artist_title">शीर्षक:</string>
+    <string name="deezer_song_duration">समयांतराल:</string>
+    <string name="deezer_album_name">एल्बम का नाम:</string>
+    <string name="deezer_add_to_favourites">पसंदीदा में जोड़ें</string>
+    <string name="deezer_delete_favourite">पसंदीदा से निकालें</string>
+    <string name="deezer_tracklist">ट्रैक सूची</string>
+    <string name="deezer_song_details">गीत का विवरण</string>
+    <string name="deezer_help_1">- परिणाम प्राप्त करने के लिए खोज स्क्रीन पर कलाकार का नाम दर्ज करें।\n
+    - ट्रैकलिस्ट पाने के लिए परिणाम आइटम पर क्लिक करें।\n
+    - पसंदीदा देखने के लिए, दराज खोलें और \'पसंदीदा\' चुनें।</string>
+    <string name="deezer_help_2">- विस्तृत जानकारी देखने के लिए एक सूची से एक गीत का चयन करें।</string>
+    <string name="deezer_help_3">- गीत के विवरण को ऑफ़लाइन सहेजने के लिए, \'पसंदीदा में जोड़ें\' पर क्लिक करें।\n
+    - स्थानीय रूप से सहेजे गए गीत विवरण को हटाने के लिए, \'पसंदीदा से निकालें\' पर क्लिक करें।</string>
 </resources>

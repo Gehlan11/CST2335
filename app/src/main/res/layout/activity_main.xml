@@ -26,4 +26,10 @@
         android:layout_height="wrap_content"
         android:text="@string/lyrics_search_app"/>
 
+    <Button
+        android:id="@+id/deezer_song_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/deezer_name"/>
+
 </LinearLayout>
