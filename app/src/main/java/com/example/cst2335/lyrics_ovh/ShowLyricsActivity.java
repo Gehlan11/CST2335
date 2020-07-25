@@ -18,6 +18,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import com.example.cst2335.R;
+import com.example.cst2335.deezer.DeezerMainActivity;
 import com.example.cst2335.geo_data_source.GeoMainActivity;
 import com.example.cst2335.soccer.SoccerMatchActivity;
 import com.google.android.material.snackbar.Snackbar;
@@ -112,6 +113,10 @@ public class ShowLyricsActivity extends AppCompatActivity implements View.OnClic
             case R.id.soccerActivity:
                 Intent soccerIntent = new Intent(ShowLyricsActivity.this, SoccerMatchActivity.class);
                 startActivity(soccerIntent);
+                break;
+            case R.id.deezerActivity:
+                Intent deezerIntent = new Intent(ShowLyricsActivity.this, DeezerMainActivity.class);
+                startActivity(deezerIntent);
                 break;
             case R.id.help:
                 showHelpDialog();
