@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Activity title:"
+            android:text="@string/deezer_activity_title"
             android:textColor="@color/colorWhite"
             android:textSize="17sp"
             android:textStyle="bold" />
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="Deezer Song Search api"
+            android:text="@string/deezer_activity_name"
             android:textColor="@color/colorWhite"
             android:textSize="17sp" />
     </LinearLayout>
@@ -41,7 +41,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Author:"
+            android:text="@string/deezer_author_title"
             android:textColor="@color/colorWhite"
             android:textSize="17sp"
             android:textStyle="bold" />
@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="BhavinKumar Patel"
+            android:text="@string/deezer_author_name"
             android:textColor="@color/colorWhite"
             android:textSize="17sp" />
     </LinearLayout>
@@ -67,7 +67,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Version:"
+            android:text="@string/deezer_version_title"
             android:textColor="@color/colorWhite"
             android:textSize="17sp"
             android:textStyle="bold" />
@@ -76,7 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="1.1"
+            android:text="@string/deezer_version_code"
             android:textColor="@color/colorWhite"
             android:textSize="17sp" />
     </LinearLayout>

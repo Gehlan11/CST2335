@@ -41,7 +41,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Title:"
+                    android:text="@string/deezer_artist_title"
                     android:textSize="17sp"
                     android:textStyle="bold" />
 
@@ -62,7 +62,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Duration:"
+                    android:text="@string/deezer_song_duration"
                     android:textSize="17sp"
                     android:textStyle="bold" />
 
@@ -83,7 +83,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Album name:"
+                    android:text="@string/deezer_album_name"
                     android:textSize="17sp"
                     android:textStyle="bold" />
 
@@ -101,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
-                android:text="Add to favourites" />
+                android:text="@string/deezer_add_to_favourites" />
 
             <Button
                 android:id="@+id/buttonDelete"
@@ -109,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
-                android:text="Remove from favourites" />
+                android:text="@string/deezer_delete_favourite" />
         </LinearLayout>
 
     </ScrollView>

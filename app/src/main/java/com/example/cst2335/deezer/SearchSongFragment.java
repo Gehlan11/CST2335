@@ -1,6 +1,8 @@
 package com.example.cst2335.deezer;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -29,22 +31,37 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 
+/**
+ * Shows the search layout and,
+ * calls the AsycTask and performs the XML parsing
+ * */
 public class SearchSongFragment extends Fragment {
 
+    /**
+     * EditText to take input from the user
+     * */
     EditText searchInput;
+    /**
+     * Button to call async task
+     * */
     Button searchButton;
+    /**
+     * ProgressBar to display
+     * */
     ProgressBar progressBar;
     ArrayList<Artist> artistArrayList;
     DeezerArtistListAdapter deezerArtistListAdapter;
     View view;
+    //shared preferences to display and store the last searched record
+    SharedPreferences sharedPreferences;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (view == null) {
             view = inflater.inflate(R.layout.search_song_fragment, container, false);
+            sharedPreferences = getActivity().getSharedPreferences("deezer_preferences", Context.MODE_PRIVATE);
             initViews(view);
-            hideProgressBar();
             searchButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -56,6 +73,10 @@ public class SearchSongFragment extends Fragment {
         return view;
     }
 
+    /**
+     * Initializes the View objects
+     * @param view Layout object
+     * */
     private void initViews(View view) {
         searchInput = view.findViewById(R.id.searchInput);
         progressBar = view.findViewById(R.id.progressBar);
@@ -63,6 +84,11 @@ public class SearchSongFragment extends Fragment {
         setupListView(view);
     }
 
+
+    /**
+     * Initializes the listview
+     * @param view Layout object
+     * */
     private void setupListView(View view) {
         ListView searchResultsList = view.findViewById(R.id.searchResultsList);
         artistArrayList = new ArrayList<>();
@@ -72,22 +98,38 @@ public class SearchSongFragment extends Fragment {
         searchResultsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //open tracklist activity
                 Intent intent = new Intent(getActivity(), TrackListActivity.class);
                 Artist artist = (Artist) parent.getItemAtPosition(position);
                 intent.putExtra("tracklist_url", artist.getTracklist());
                 startActivity(intent);
             }
         });
+        hideProgressBar();
+        String searchInputString = sharedPreferences.getString("search_input", "");
+        if (!searchInputString.equals("")) {
+            searchInput.setText(searchInputString);
+            new SearchSong(searchInputString).execute();
+        }
     }
 
+    /**
+     * Sets the progressbar visibility to VISIBLE
+     * */
     private void showProgressBar() {
         progressBar.setVisibility(View.VISIBLE);
     }
 
+    /**
+     * Sets the progressbar visibility to GONE
+     * */
     private void hideProgressBar() {
         progressBar.setVisibility(View.GONE);
     }
 
+    /**
+     * AsyncTask to call API
+     * */
     class SearchSong extends AsyncTask<Void, Void, String> {
 
         String artistName;
@@ -114,6 +156,7 @@ public class SearchSongFragment extends Fragment {
                         mUrl.openConnection();
                 inputStream = connection.getInputStream();
                 try {
+                    //perform XML parsing
                     XmlPullParserFactory pullParserFactory = XmlPullParserFactory.newInstance();
                     XmlPullParser pullParser = pullParserFactory.newPullParser();
                     pullParser.setInput(inputStream, null);
@@ -162,6 +205,12 @@ public class SearchSongFragment extends Fragment {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             hideProgressBar();
+            if (artistArrayList.size() > 0) {
+                //save the searched item if that was the valid search
+                sharedPreferences.edit()
+                        .putString("search_input", artistName)
+                        .apply();
+            }
             deezerArtistListAdapter.notifyDataSetChanged();
         }
     }

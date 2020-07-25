@@ -1,7 +1,18 @@
 package com.example.cst2335.deezer;
 
+/**
+ * Used for store a search result in a list view
+ */
 public class Artist {
+
+    /**
+     * Name of an artist
+     */
     String name;
+
+    /**
+     * URL for the artist's tracklist
+     */
     String tracklist;
 
     public String getName() {

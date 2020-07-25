@@ -11,10 +11,16 @@ import com.example.cst2335.R;
 
 import java.util.ArrayList;
 
-
+/**
+ * List adapter for showing Search results
+ * */
 public class DeezerArtistListAdapter extends BaseAdapter {
 
+    /**
+     * Artists data
+     * */
     ArrayList<Artist> artistArrayList;
+    /** Layout inlfater to bind the layout with the adapter class */
     static LayoutInflater inflater;
 
     public DeezerArtistListAdapter(Context context, ArrayList<Artist> artists){
@@ -42,6 +48,7 @@ public class DeezerArtistListAdapter extends BaseAdapter {
         if(convertView == null){
             convertView = inflater.inflate(R.layout.deezer_artist_list, parent, false);
         }
+        //displaying the data to the text view
         TextView textArtistName = convertView.findViewById(R.id.textArtistName);
         textArtistName.setText(artistArrayList.get(position).getName());
         return convertView;

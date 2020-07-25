@@ -11,11 +11,21 @@ import com.example.cst2335.R;
 
 import java.util.ArrayList;
 
+/**
+ * List adapter for showing Favourite songs
+ */
 public class FavouriteListAdapter extends BaseAdapter {
 
+    /**
+     * Layout inlfater to bind the layout with the adapter class
+     */
     static LayoutInflater inflater;
     ArrayList<Song> songs;
 
+    /**
+     * @param context Context to be passed to initialize the inflater
+     * @param songs List of songs to be displayed
+     * */
     FavouriteListAdapter(Context context, ArrayList<Song> songs) {
         this.songs = songs;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -41,6 +51,8 @@ public class FavouriteListAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.favourite_song_list, parent, false);
         }
+
+        //set the data to list item
         TextView textSongTitle = convertView.findViewById(R.id.textSongTitle);
         TextView textAlbumTitle = convertView.findViewById(R.id.textAlbumTitle);
         String songTitle = songs.get(position).getTitle();

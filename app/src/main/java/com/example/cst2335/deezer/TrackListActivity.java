@@ -34,8 +34,14 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
+/**
+ * Activity to show a TrackList of an selected artist
+ */
 public class TrackListActivity extends AppCompatActivity {
 
+    /**
+     * ProgressBar object to display it
+     */
     ProgressBar progressBar;
     ListView trackListView;
     String trackListUrl = "";
@@ -50,11 +56,18 @@ public class TrackListActivity extends AppCompatActivity {
         getTrackList();
     }
 
+    /**
+     * Get the tracklist by calling another API
+     */
     private void getTrackList() {
+        //read the URL from intent data
         trackListUrl = getIntent().getStringExtra("tracklist_url");
         new GetTrackList(trackListUrl).execute();
     }
 
+    /**
+     * Initialize the views
+     * */
     private void initViews() {
         trackListView = findViewById(R.id.trackListView);
         progressBar = findViewById(R.id.progressBar);
@@ -74,32 +87,52 @@ public class TrackListActivity extends AppCompatActivity {
         hideProgressBar();
     }
 
+    /**
+     * Inflate the menu
+     * */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.deezer_toolbar, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
+    /**
+     * Handles the menu item clicks
+     * */
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId() == R.id.geoApp){
+        if (item.getItemId() == R.id.geoApp) {
             startActivity(new Intent(TrackListActivity.this, GeoMainActivity.class));
-        }else if(item.getItemId() == R.id.soccerApp){
+        } else if (item.getItemId() == R.id.soccerApp) {
             startActivity(new Intent(TrackListActivity.this, SoccerMatchActivity.class));
-        }else if(item.getItemId() == R.id.lyricsApp){
+        } else if (item.getItemId() == R.id.lyricsApp) {
             startActivity(new Intent(TrackListActivity.this, LyricsMainActivity.class));
+        } else if (item.getItemId() == R.id.deezer_help) {
+            DialogHelper.showHelpDialog(this,
+                    getResources().getString(R.string.deezer_toolbar_help),
+                    getResources().getString(R.string.deezer_help_2),
+                    getResources().getString(R.string.deezer_help_diaog_ok));
         }
         return super.onOptionsItemSelected(item);
     }
 
-    private void showProgressBar(){
+    /**
+     * Sets the progressbar visibility to VISIBLE
+     * */
+    private void showProgressBar() {
         progressBar.setVisibility(View.VISIBLE);
     }
 
-    private void hideProgressBar(){
+    /**
+     * Sets the progressbar visibility to GONE
+     * */
+    private void hideProgressBar() {
         progressBar.setVisibility(View.GONE);
     }
 
+    /**
+     * AsyncTask class to call the get tracklist API
+     * */
     class GetTrackList extends AsyncTask<Void, Void, String> {
 
         String trackListUrl;
@@ -155,7 +188,7 @@ public class TrackListActivity extends AppCompatActivity {
                     song.setCover_big(cover_big);
                     songs.add(song);
                 }
-                if(count == 0){
+                if (count == 0) {
                     Toast.makeText(TrackListActivity.this, "No songs found", Toast.LENGTH_SHORT).show();
                 }
                 trackListAdapter.notifyDataSetChanged();

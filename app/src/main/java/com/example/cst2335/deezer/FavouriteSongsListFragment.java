@@ -18,10 +18,20 @@ import java.util.ArrayList;
 
 public class FavouriteSongsListFragment extends Fragment {
 
+    /**
+     * ListView to display the data
+     * */
     ListView listFavouriteSongs;
+    /**
+     * Songs List object
+     * */
     ArrayList<Song> songs;
+    /**
+     * Adapter object to set adapter to the ListView
+     * */
     FavouriteListAdapter favouriteListAdapter;
 
+    /**Database helper class object*/
     private DeezerSongDatabse deezerSongDatabse;
 
     @Nullable
@@ -45,9 +55,14 @@ public class FavouriteSongsListFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        //get the records from the database
         performSelectQuery();
     }
 
+
+    /**
+     * gets the records from the database and set the data to the ListView
+     * */
     private void performSelectQuery(){
         songs = deezerSongDatabse.getAllFavouriteSongs();
         favouriteListAdapter = new FavouriteListAdapter(getActivity(), songs);

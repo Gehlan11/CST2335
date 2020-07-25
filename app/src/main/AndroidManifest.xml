@@ -41,9 +41,11 @@
             android:name=".deezer.DeezerMainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".deezer.TrackListActivity" />
+            android:name=".deezer.TrackListActivity"
+            android:label="@string/deezer_tracklist"/>
         <activity
-            android:name=".deezer.DeezerSongDetailsActivity"/>
+            android:name=".deezer.DeezerSongDetailsActivity"
+            android:label="@string/deezer_song_details"/>
     </application>
 
 </manifest>

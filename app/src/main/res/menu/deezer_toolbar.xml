@@ -3,19 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-        <item
-            android:id="@+id/geoApp"
-            android:icon="@drawable/ic_location_city"
-            app:showAsAction="ifRoom"
-            android:title="@string/geo_data_app" />
+    <item
+        android:id="@+id/geoApp"
+        android:icon="@drawable/ic_location_city"
+        android:title="@string/geo_data_app"
+        app:showAsAction="ifRoom" />
 
-        <item
-            android:id="@+id/soccerApp"
-            android:icon="@drawable/soccer_icon"
-            app:showAsAction="ifRoom"
-            android:title="@string/soccer_app" />
+    <item
+        android:id="@+id/soccerApp"
+        android:icon="@drawable/soccer_icon"
+        android:title="@string/soccer_app"
+        app:showAsAction="ifRoom" />
 
-        <item
-            android:id="@+id/lyricsApp"
-            android:title="@string/lyrics_search_app" />
+    <item
+        android:id="@+id/lyricsApp"
+        android:title="@string/lyrics_search_app" />
+
+    <item
+        android:id="@+id/deezer_help"
+        android:title="@string/deezer_toolbar_help" />
 </menu>

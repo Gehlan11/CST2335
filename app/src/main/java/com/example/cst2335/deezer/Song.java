@@ -2,6 +2,10 @@ package com.example.cst2335.deezer;
 
 import java.io.Serializable;
 
+/**
+ * java class to store and pass within intent
+ * the information about a single song
+ * */
 public class Song implements Serializable {
     String id;
     String title;
