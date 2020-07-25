@@ -17,5 +17,9 @@
         <item
             android:id="@+id/soccerActivity"
             android:title="@string/soccer_app" />
+
+        <item
+            android:id="@+id/deezerActivity"
+            android:title="@string/deezer_name" />
     </group>
 </menu>

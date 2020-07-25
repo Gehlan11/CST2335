@@ -17,6 +17,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.cst2335.R;
+import com.example.cst2335.deezer.DeezerMainActivity;
 import com.example.cst2335.geo_data_source.GeoMainActivity;
 import com.example.cst2335.soccer.SoccerMatchActivity;
 import com.google.android.material.navigation.NavigationView;
@@ -108,6 +109,11 @@ public class LyricsMainActivity extends AppCompatActivity {
                         Intent soccerIntent = new Intent(LyricsMainActivity.this, SoccerMatchActivity.class);
                         startActivity(soccerIntent);
                         break;
+                    case R.id.deezerActivity:
+                        //start deezer activity
+                        Intent deezerIntent = new Intent(LyricsMainActivity.this, DeezerMainActivity.class);
+                        startActivity(deezerIntent);
+                        break;
                 }
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return false;
@@ -139,6 +145,10 @@ public class LyricsMainActivity extends AppCompatActivity {
             case R.id.soccerActivity:
                 Intent soccerIntent = new Intent(LyricsMainActivity.this, SoccerMatchActivity.class);
                 startActivity(soccerIntent);
+                break;
+            case R.id.deezerActivity:
+                Intent deezerIntent = new Intent(LyricsMainActivity.this, DeezerMainActivity.class);
+                startActivity(deezerIntent);
                 break;
             case R.id.help:
                 showHelpDialog();
