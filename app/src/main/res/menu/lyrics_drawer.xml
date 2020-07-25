@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/itemSearch"
+        android:title="@string/search" />
+    <item
+        android:id="@+id/itemFavourite"
+        android:title="@string/favourite" />
+
+    <group android:id="@+id/groupOtherActivity"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/geoDataActivity"
+            android:title="@string/geo_data_app" />
+
+        <item
+            android:id="@+id/soccerActivity"
+            android:title="@string/soccer_app" />
+
+        <item
+            android:id="@+id/deezerActivity"
+            android:title="@string/deezer_name" />
+    </group>
+</menu>
