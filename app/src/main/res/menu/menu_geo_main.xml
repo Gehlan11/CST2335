@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/geo_search_city"
-        android:title="@string/geo_menu_item_search"/>
+    <item
+        android:id="@+id/geo_search_city"
+        android:title="@string/geo_menu_item_search" />
 
-    <item android:id="@+id/geo_saved_cities"
-        android:title="@string/geo_menu_item_saved"/>
+    <item
+        android:id="@+id/geo_saved_cities"
+        android:title="@string/geo_menu_item_saved" />
 
+    <group
+        android:id="@+id/group"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/soccer_app"
+            android:title="@string/soccer_app" />
+        <item
+            android:id="@+id/lyrics_search_app"
+            android:title="@string/lyrics_search_app" />
+        <item
+            android:id="@+id/deezer_app"
+            android:title="@string/deezer_name" />
+    </group>
 </menu>

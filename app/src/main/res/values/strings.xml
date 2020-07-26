@@ -12,7 +12,7 @@
     <string name="geo_search_button">Search near by cities</string>
     <string name="geo_city_name">City name</string>
     <string name="geo_city_region">region</string>
-    <string name="geo_city_distance_label">Distance: </string>
+    <string name="geo_city_distance_label">Distance (km): </string>
     <string name="geo_city_distance">0</string>
     <string name="geo_city_country_name">Country:</string>
     <string name="geo_city_region_name">Region:</string>
@@ -24,6 +24,22 @@
     <string name="geo_open_map_text">Open in google maps</string>
     <string name="geo_city_save">Add to favourite cities</string>
     <string name="geo_city_delete">Remove from favourite cities</string>
+    <string name="geo_about_author">Author:</string>
+    <string name="geo_about_author_name">Gurleen Kaur Gehlan</string>
+    <string name="geo_about_version">Version:</string>
+    <string name="geo_about_version_name">1</string>
+    <string name="geo_toast_enter_lat_lng">Please enter latitude and longitude</string>
+    <string name="geo_snackbar_added">City details are removed from the list of favourite cities</string>
+    <string name="geo_snackbar_deleted">City details are removed from the list of favourite cities</string>
+    <string name="geo_help">- Enter latitude and longitude to get list of nearby cities.\n
+        - Click on one of the cities to view detailed information.\n
+        - Open drawer and select the Saved Cities to view offline saved city list.
+    </string>
+    <string name="geo_help_details">- Click on Open in google maps to check the map in google maps application.\n
+        - Click on Add to favourite cities to save the details into the list of favourite cities, so you can check it later on.\n
+        - Click on Remove from favourite cities to delete the saved city details from favourite cities.
+    </string>
+    <string name="geo_ok">OK</string>
 
     <!--  Soccer strings  -->
     <string name="soccer_app">Soccer match highlights</string>

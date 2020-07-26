@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/geo_help"
-        android:title="@string/geo_menu_item_help"/>
+    <item
+        android:id="@+id/soccer_app"
+        android:icon="@drawable/soccer_icon"
+        android:title="@string/soccer_app"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/lyrics_search_app"
+        android:icon="@drawable/ic_lyrics"
+        android:title="@string/lyrics_search_app"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/deezer_app"
+        android:title="@string/deezer_name" />
+
+    <item
+        android:id="@+id/geo_help"
+        android:title="@string/geo_menu_item_help" />
 
 </menu>

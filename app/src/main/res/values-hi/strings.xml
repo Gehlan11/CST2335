@@ -2,6 +2,46 @@
 <resources>
     <string name="app_name">CST2335</string>
 
+    <string name="geo_data_app">Geo Data Source</string>
+    <string name="geo_menu_item_search">आसपास के शहरों की खोज</string>
+    <string name="geo_menu_item_saved">सहेजे गए शहर</string>
+    <string name="geo_menu_item_help">मदद</string>
+    <string name="geo_drawer_open">दराज खोलें</string>
+    <string name="geo_drawer_close">दराज को बंद करें</string>
+    <string name="geo_hint_lat">अक्षांश दर्ज करें</string>
+    <string name="geo_hint_long">देशांतर दर्ज करें</string>
+    <string name="geo_search_button">आसपास के शहरों की खोज करें</string>
+    <string name="geo_city_name">शहर का नाम</string>
+    <string name="geo_city_region">क्षेत्र</string>
+    <string name="geo_city_distance_label">दूरी (किमी): </string>
+    <string name="geo_city_distance">0</string>
+    <string name="geo_city_country_name">देश:</string>
+    <string name="geo_city_region_name">क्षेत्र:</string>
+    <string name="geo_city_currency_code">मुद्रा कोड:</string>
+    <string name="geo_city_currency_name">मुद्रा का नाम:</string>
+    <string name="geo_city_currency_sym">मुद्रा चिन्ह:</string>
+    <string name="geo_city_lat">अक्षांश:</string>
+    <string name="geo_city_lon">देशांतर:</string>
+    <string name="geo_open_map_text">Google maps में खोलें</string>
+    <string name="geo_city_save">पसंदीदा शहरों में जोड़ें</string>
+    <string name="geo_city_delete">पसंदीदा शहरों से निकालें</string>
+    <string name="geo_about_author">रचयिता:</string>
+    <string name="geo_about_author_name">Gurleen Kaur Gehlan</string>
+    <string name="geo_about_version">संस्करण:</string>
+    <string name="geo_about_version_name">1</string>
+    <string name="geo_toast_enter_lat_lng">कृपया अक्षांश और देशांतर दर्ज करें</string>
+    <string name="geo_snackbar_added">शहर का विवरण पसंदीदा शहरों की सूची में सहेजा गया </string>
+    <string name="geo_snackbar_deleted">शहर का विवरण पसंदीदा शहरों की सूची से हटा दिया गया</string>
+    <string name="geo_help">- आसपास के शहरों की सूची प्राप्त करने के लिए अक्षांश और देशांतर दर्ज करें।\n
+        - विस्तृत जानकारी देखने के लिए शहरों में से एक पर क्लिक करें।\n
+        - ड्राअर खोलें और ऑफ़लाइन सहेजी गई शहर सूची देखने के लिए सहेजे गए शहरों का चयन करें.
+    </string>
+    <string name="geo_help_details">- गूगल मैप्स एप्लीकेशन में मैप को चेक करने के लिए Google maps में खोलें पर क्लिक करें।\n
+        - पसंदीदा शहरों की सूची में विवरणों को सहेजने के लिए पसंदीदा शहरों में जोड़ें पर क्लिक करें, ताकि आप इसे बाद में देख सकें।\n
+        - पसंदीदा शहरों में से शहर को हटाने के लिए पसंदीदा शहरों से निकालें पर क्लिक करें।
+    </string>
+    <string name="geo_ok">ठीक</string>
+
     <!--  Soccer strings  -->
     <string name="soccer_app">Soccer match highlights</string>
     <string name="soccer_open_drawer">दराज खोलें</string>

@@ -16,6 +16,10 @@ public class CitySearchListAdapter extends BaseAdapter {
     private ArrayList<CityData> cityDataList;
     private static LayoutInflater inflater;
 
+    /**
+     * @param context context
+     * @param cityDataList List containing CityData objects
+     * */
     public CitySearchListAdapter(Context context, ArrayList<CityData> cityDataList){
         this.cityDataList = cityDataList;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

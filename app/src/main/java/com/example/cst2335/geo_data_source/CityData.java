@@ -2,20 +2,59 @@ package com.example.cst2335.geo_data_source;
 
 import java.io.Serializable;
 
+/**
+ * class contains all the fields in single entity
+ */
 public class CityData implements Serializable {
 
-    private String country;
-    private String region;
-    private String city;
-    private String latitude;
-    private String longitude;
-    private String currency_code;
-    private String currency_name;
-    private String currency_symbol;
-    private String sunrise;
-    private String sunset;
-    private String time_zone;
-    private String distance_km;
+    /**
+     * Country of a city
+     */
+    private String country = "";
+    /**
+     * region of a city
+     */
+    private String region = "";
+    /**
+     * name of a city
+     */
+    private String city = "";
+    /**
+     * latitude of a city
+     */
+    private String latitude = "";
+    /**
+     * longitude of a city
+     */
+    private String longitude = "";
+    /**
+     * international currency code of a country
+     */
+    private String currency_code = "";
+    /**
+     * international currency name of a country
+     */
+    private String currency_name = "";
+    /**
+     * currency symbol of a country
+     */
+    private String currency_symbol = "";
+    /**
+     * sunrise time
+     */
+    private String sunrise = "";
+    /**
+     * sunset time
+     */
+    private String sunset = "";
+    private String time_zone = "";
+    /**
+     * distance from entered latitude and longitude
+     */
+    private String distance_km = "";
+
+    public CityData() {
+    }
 
     public CityData(String country, String region, String city, String latitude, String longitude, String currency_code, String currency_name, String currency_symbol, String sunrise, String sunset, String time_zone, String distance_km) {
         this.country = country;

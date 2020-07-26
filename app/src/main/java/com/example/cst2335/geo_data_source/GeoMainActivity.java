@@ -1,5 +1,7 @@
 package com.example.cst2335.geo_data_source;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -8,6 +10,7 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -16,16 +19,31 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.cst2335.R;
+import com.example.cst2335.deezer.DeezerMainActivity;
+import com.example.cst2335.lyrics_ovh.LyricsMainActivity;
+import com.example.cst2335.soccer.SoccerMatchActivity;
 import com.google.android.material.navigation.NavigationView;
 
 public class GeoMainActivity extends AppCompatActivity {
 
+    /**
+     * to show toolbar menu
+     */
     Toolbar toolbar;
+    /**
+     * to show drawer menu
+     */
     NavigationView navigationView;
+    /**
+     * to show drawer
+     */
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle drawerToggle;
     FrameLayout container;
 
+    /**
+     * to replace/add fragments in the activity
+     */
     FragmentManager fragmentManager;
     String currentFragment = "";
     GeoSearchFragment geoSearchFragment;
@@ -54,6 +72,7 @@ public class GeoMainActivity extends AppCompatActivity {
         geoSavedCitiesFragment = new GeoSavedCitiesFragment();
 
         fragmentManager = getSupportFragmentManager();
+        //show search cities fragment
         currentFragment = "search";
         FragmentTransaction fragmentSearchTransaction = fragmentManager.beginTransaction();
         fragmentSearchTransaction.replace(R.id.view_container, geoSearchFragment);
@@ -75,6 +94,18 @@ public class GeoMainActivity extends AppCompatActivity {
                         fragmentSavedTransaction.replace(R.id.view_container, geoSavedCitiesFragment);
                         fragmentSavedTransaction.commit();
                         break;
+                    case R.id.soccer_app:
+                        Intent soccerIntent = new Intent(GeoMainActivity.this, SoccerMatchActivity.class);
+                        startActivity(soccerIntent);
+                        break;
+                    case R.id.lyrics_search_app:
+                        Intent lyricsIntent = new Intent(GeoMainActivity.this, LyricsMainActivity.class);
+                        startActivity(lyricsIntent);
+                        break;
+                    case R.id.deezer_app:
+                        Intent deezerIntent = new Intent(GeoMainActivity.this, DeezerMainActivity.class);
+                        startActivity(deezerIntent);
+                        break;
                 }
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return false;
@@ -88,6 +119,31 @@ public class GeoMainActivity extends AppCompatActivity {
             case android.R.id.home:
                 drawerLayout.openDrawer(GravityCompat.START);
                 return true;
+            case R.id.soccer_app:
+                Intent soccerIntent = new Intent(GeoMainActivity.this, SoccerMatchActivity.class);
+                startActivity(soccerIntent);
+                return true;
+            case R.id.lyrics_search_app:
+                Intent lyricsIntent = new Intent(GeoMainActivity.this, LyricsMainActivity.class);
+                startActivity(lyricsIntent);
+                return true;
+            case R.id.deezer_app:
+                Intent deezerIntent = new Intent(GeoMainActivity.this, DeezerMainActivity.class);
+                startActivity(deezerIntent);
+                return true;
+            case R.id.geo_help:
+                //showing alert dialog to show help instruction to user
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle(getString(R.string.geo_menu_item_help));
+                builder.setMessage(getString(R.string.geo_help));
+                builder.setNeutralButton(getString(R.string.geo_ok), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                builder.show();
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -100,14 +156,17 @@ public class GeoMainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+        //close drawer if open
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
-        }else if(!currentFragment.equals("search")){
+        } else if (!currentFragment.equals("search")) {
+            //show search fragment if it's not being shown
             currentFragment = "search";
             FragmentTransaction fragmentSearchTransaction = fragmentManager.beginTransaction();
             fragmentSearchTransaction.replace(R.id.view_container, geoSearchFragment);
             fragmentSearchTransaction.commit();
-        }else{
+        } else {
+            //perform back
             super.onBackPressed();
         }
     }
