@@ -9,10 +9,18 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ * this class helps to call API url and get the
+ * recent matches using AsyncTask
+ * */
 public class GetRecentMatches extends AsyncTask<Void, Void, String> {
 
+    //listener to send callbacks to the UI
     private MatchDataListener matchDataListener;
 
+    /**
+     * @param matchDataListener Listener to set
+     * */
     public GetRecentMatches(MatchDataListener matchDataListener) {
         this.matchDataListener = matchDataListener;
     }
@@ -27,6 +35,7 @@ public class GetRecentMatches extends AsyncTask<Void, Void, String> {
     protected String doInBackground(Void... voids) {
         String response = "";
         try {
+            //call API
             URL mUrl = new URL("https://www.scorebat.com/video-api/v1/");
             HttpURLConnection connection = (HttpURLConnection)
                     mUrl.openConnection();

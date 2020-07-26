@@ -11,6 +11,10 @@ import com.example.cst2335.R;
 
 import java.util.ArrayList;
 
+/**
+ * BaseAdapter class to set as an adapter using defined
+ * XML layout to the listview
+ * */
 public class MatchAdapter extends BaseAdapter {
 
     private static LayoutInflater layoutInflater;

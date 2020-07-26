@@ -2,6 +2,30 @@
 <resources>
     <string name="app_name">CST2335</string>
 
+    <!--  Soccer strings  -->
+    <string name="soccer_app">Soccer match highlights</string>
+    <string name="soccer_open_drawer">दराज खोलें</string>
+    <string name="soccer_close_drawer">दराज को बंद करें</string>
+    <string name="soccer_error_no_fav">कोई पसंदीदा मैच नहीं है!</string>
+    <string name="soccer_recent_matches">हाल के मैच</string>
+    <string name="soccer_favourite_matches">पसंदीदा मैच</string>
+    <string name="soccer_help">मदद</string>
+    <string name="soccer_watch_highlights">मैच की झलकियां देखें</string>
+    <string name="soccer_add_to_favourites">पसंदीदा में जोड़ें</string>
+    <string name="soccer_delete_from_favourites">पसंदीदा से हटाएं</string>
+    <string name="soccer_match_date">तारीख: </string>
+    <string name="soccer_author_key">निर्माता:</string>
+    <string name="soccer_author_value">फाल्गुनी</string>
+    <string name="soccer_app_version">संस्करण</string>
+    <string name="soccer_match_added_to_list">मैच को पसंदीदा में जोड़ा गया है</string>
+    <string name="soccer_match_deleted_from_list">मैच पसंदीदा से हटा दिया गया है</string>
+    <string name="soccer_ok">ठीक है</string>
+    <string name="soccer_help_main">- दिनांक और हाइलाइट देखने के लिए सूची से एक मैच का चयन करें।\n
+    - सहेजे गए मैचों को देखने के लिए दराज से पसंदीदा मैच चुनें।</string>
+    <string name="soccer_help_detail">- चयनित हाइलाइट देखने के लिए मैच की झलकियां देखें पर क्लिक करें।\n
+    - ऑफ़लाइन विवरणों को सहेजने के लिए पसंदीदा में जोड़ें पर क्लिक करें।\n
+    - ऑफ़लाइन सहेजे गए मैच विवरण को हटाने के लिए पसंदीदा से हटाएं पर क्लिक करें।.</string>
+
     <!--  Lyrics String  -->
     <string name="lyrics_search_app">Song Lyrics Search</string>
     <string name="enter_artist_name">कलाकार या बैंड का नाम दर्ज करें</string>
