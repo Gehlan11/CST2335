@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:id="@+id/recentSoccerMatch"
+        android:title="@string/soccer_recent_matches" />
+    <item android:id="@+id/favSoccerMatch"
+        android:title="@string/soccer_favourite_matches" />
+    <group
+        android:id="@+id/group"
+        android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/geoActivity"
+            android:title="@string/geo_data_app" />
+        <item
+            android:id="@+id/lyricsActivity"
+            android:title="@string/lyrics_search_app" />
+        <item
+            android:id="@+id/deezerActivity"
+            android:title="@string/deezer_name" />
+    </group>
 </menu>

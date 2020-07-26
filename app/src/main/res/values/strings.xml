@@ -27,6 +27,27 @@
 
     <!--  Soccer strings  -->
     <string name="soccer_app">Soccer match highlights</string>
+    <string name="soccer_open_drawer">Open drawer</string>
+    <string name="soccer_close_drawer">Close drawer</string>
+    <string name="soccer_error_no_fav">There is no favourite matches!</string>
+    <string name="soccer_recent_matches">Recent matches</string>
+    <string name="soccer_favourite_matches">Favourite matches</string>
+    <string name="soccer_help">Help</string>
+    <string name="soccer_watch_highlights">Watch highlights</string>
+    <string name="soccer_add_to_favourites">Add to Favourites</string>
+    <string name="soccer_delete_from_favourites">Delete from favourites</string>
+    <string name="soccer_match_date">Date: </string>
+    <string name="soccer_author_key">Author:</string>
+    <string name="soccer_author_value">Falguni</string>
+    <string name="soccer_app_version">Version</string>
+    <string name="soccer_match_added_to_list">Match has been added to favourites</string>
+    <string name="soccer_match_deleted_from_list">Match has been deleted from favourites</string>
+    <string name="soccer_ok">OK</string>
+    <string name="soccer_help_main">- Select a match from the list to view date and highlights.\n
+    - Select Favourite matches from drawer to view saved matches.</string>
+    <string name="soccer_help_detail">- Click on Watch highlights to watch selected match highlights.\n
+    - Click on Add to Favourites to save match details offline.\n
+    - Click on Delete from favourites to delete offline saved match details.</string>
 
     <!--  Lyrics String  -->
     <string name="lyrics_search_app">Song Lyrics Search</string>
